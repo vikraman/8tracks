@@ -1,0 +1,16 @@
+name:                8tracks
+version:             0.1.0.0
+synopsis:            A command line player for 8tracks.com
+homepage:            https://github.com/vikraman/8tracks
+license:             GPL-3
+license-file:        LICENSE
+author:              Vikraman
+maintainer:          vikraman.choudhury@gmail.com
+category:            Sound
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable 8tracks
+  hs-source-dirs:      src
+  main-is:             8tracks.hs
+  build-depends:       base == 4.*
