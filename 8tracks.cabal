@@ -17,6 +17,7 @@ executable 8tracks
                , text
                , text-format
                , bytestring
+               , cmdargs
                , aeson
                , transformers
                , configurator
