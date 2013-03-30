@@ -1,5 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-
 import System.Console.CmdArgs
 
 import EightTracks.Config

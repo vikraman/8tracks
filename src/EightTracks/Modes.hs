@@ -1,4 +1,5 @@
 {-# LANGUAGE DeriveDataTypeable #-}
+
 module EightTracks.Modes
        ( mode
        , runMode
