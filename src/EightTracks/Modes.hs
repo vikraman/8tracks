@@ -7,6 +7,8 @@ module EightTracks.Modes
 
 import System.Console.CmdArgs
 
+import EightTracks.Player
+
 data Player = Find { tags :: Maybe [String]
                    , sort :: Maybe SortMode
                    }
@@ -34,4 +36,7 @@ mode :: Mode (CmdArgs Player)
 mode = cmdArgsMode $ modes [find, info, play &= auto]
 
 runMode :: Player -> IO ()
-runMode = print
+runMode (Find tags sort) = do
+  mixes <- mixFind tags sort
+  print mixes
+runMode x = print x

@@ -2,6 +2,7 @@
 
 module EightTracks.Player
        ( playerLogin
+       , mixFind
        ) where
 
 import Control.Monad.IO.Class (liftIO)
@@ -40,3 +41,12 @@ playerLogin (LoggedOut l p) = do
   case HM.lookup "user_token" hm of
     Nothing -> error "Couldn't login"
     Just (String ut) -> return $ LoggedIn ut Stopped
+
+--mixFind :: [Text] -> SortMode -> [Mix]
+mixFind tags sort = do
+  (Object hm) <- request "GET" "http://8tracks.com/mixes.jsonp" ""
+  case HM.lookup "mixes" hm of
+    Nothing -> error "Couldn't find mixes"
+    Just mixes -> do
+      -- TODO: Decode into [Mix]
+      return mixes
